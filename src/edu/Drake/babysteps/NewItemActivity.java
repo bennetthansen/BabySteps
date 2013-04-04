@@ -7,6 +7,7 @@ import android.view.Menu;
 public class NewItemActivity extends Activity {
 
 	//testing change
+	//Nate's change
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
