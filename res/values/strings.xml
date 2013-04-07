@@ -10,5 +10,12 @@
     <string name="title_activity_email">EmailActivity</string>
     <string name="title_activity_list_settings">ListSettingsActivity</string>
     <string name="title_activity_new_item">NewItemActivity</string>
+    <string name="save_button">Save</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="quantity_text">Quantity</string>
+    <string name="send_button">Send</string>
+    <string name="to_text">To: </string>
+    <string name="cc_text">CC: </string>
+    <string name="subject_text">Subject:</string>
 
 </resources>
