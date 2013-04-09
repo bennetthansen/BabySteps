@@ -15,6 +15,8 @@ public class MyListsActivity extends Activity {
 	ImageView backgroundImage;
 	int listCount = 0;
 	static boolean first = true;
+	
+	// Test comment
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
