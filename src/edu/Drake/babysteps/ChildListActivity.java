@@ -24,7 +24,7 @@ private static final String TAG = "ChildListActivity";
 		buttonN.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				//Goes to myListActivity when clicked
+				//Goes to ChildSettingsActivity when clicked
 			Log.v(TAG, "button pressed");
 			Intent intent = new Intent(v.getContext(), ChildSettingsActivity.class);
 			startActivity(intent);
