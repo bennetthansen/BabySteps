@@ -21,70 +21,36 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        public static final int ic_launcher=0x7f020000;
-        public static final int listsettings=0x7f020001;
-        public static final int mylists=0x7f020002;
-        public static final int nolists=0x7f020003;
-    }
-    public static final class id {
-        public static final int action_settings=0x7f080012;
-        public static final int button1=0x7f08000a;
-        public static final int button2=0x7f08000b;
-        public static final int cancelButton=0x7f08000d;
-        public static final int ccText=0x7f080008;
-        public static final int contentText=0x7f080004;
-        public static final int emailCCText=0x7f080007;
-        public static final int emailText=0x7f080006;
-        public static final int imageView1=0x7f080009;
-        public static final int itemText=0x7f08000f;
-        public static final int listview=0x7f08000c;
-        public static final int numberPicker=0x7f080011;
-        public static final int quantityText=0x7f080010;
-        public static final int saveButton=0x7f08000e;
-        public static final int sendButton=0x7f080005;
-        public static final int subjectContentText=0x7f080002;
-        public static final int subjectText=0x7f080003;
-        public static final int textView2=0x7f080001;
-        public static final int toText=0x7f080000;
-=======
         public static final int child_settings=0x7f020000;
         public static final int children_list=0x7f020001;
         public static final int ic_launcher=0x7f020002;
-        public static final int practice=0x7f020003;
+        public static final int listsettings=0x7f020003;
+        public static final int mylists=0x7f020004;
+        public static final int nolists=0x7f020005;
+        public static final int practice=0x7f020006;
     }
     public static final class id {
-=======
-        public static final int child_settings=0x7f020000;
-        public static final int children_list=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
-        public static final int practice=0x7f020003;
-    }
-    public static final class id {
->>>>>>> 1b0a4222f5a004f6845f9dd8d8679c36f0650aa5
-        public static final int action_settings=0x7f080011;
-        public static final int cancelButton=0x7f08000c;
+        public static final int action_settings=0x7f080014;
+        public static final int button1=0x7f08000c;
+        public static final int button2=0x7f08000d;
+        public static final int cancelButton=0x7f08000f;
         public static final int ccText=0x7f08000b;
         public static final int contentText=0x7f080007;
         public static final int continueButton=0x7f080002;
         public static final int emailCCText=0x7f08000a;
         public static final int emailText=0x7f080009;
         public static final int imageView1=0x7f080000;
-        public static final int itemText=0x7f08000e;
+        public static final int itemText=0x7f080011;
+        public static final int listview=0x7f08000e;
         public static final int nextButton=0x7f080001;
-        public static final int numberPicker=0x7f080010;
-        public static final int quantityText=0x7f08000f;
-        public static final int saveButton=0x7f08000d;
+        public static final int numberPicker=0x7f080013;
+        public static final int quantityText=0x7f080012;
+        public static final int saveButton=0x7f080010;
         public static final int sendButton=0x7f080008;
         public static final int subjectContentText=0x7f080005;
         public static final int subjectText=0x7f080006;
         public static final int textView2=0x7f080004;
         public static final int toText=0x7f080003;
-<<<<<<< HEAD
->>>>>>> 1b0a4222f5a004f6845f9dd8d8679c36f0650aa5
-=======
->>>>>>> 1b0a4222f5a004f6845f9dd8d8679c36f0650aa5
     }
     public static final class layout {
         public static final int activity_checklist=0x7f030000;
