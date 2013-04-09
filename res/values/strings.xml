@@ -17,5 +17,7 @@
     <string name="to_text">To: </string>
     <string name="cc_text">CC: </string>
     <string name="subject_text">Subject:</string>
+    <string name="next_button">Next</string>
+    <string name="continue_button">Continue</string>
 
 </resources>
