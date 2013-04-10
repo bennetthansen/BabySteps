@@ -12,16 +12,48 @@
         android:id="@+id/imageView1"
         android:layout_width="300dp"
         android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:src="@drawable/children_list" />
 
     <Button
-        android:id="@+id/nextButton"
-        android:layout_width="200dp"
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView1"
-        android:layout_centerHorizontal="true"
-        android:text="@string/next_button" />
+        android:layout_alignBaseline="@+id/cancelButton"
+        android:layout_alignBottom="@+id/cancelButton"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_marginLeft="56dp"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/addChildButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/saveButton"
+        android:layout_below="@+id/saveButton"
+        android:layout_marginTop="20dp"
+        android:text="Add Child" />
+
+    <Button
+        android:id="@+id/editChildButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/imageView1"
+        android:layout_below="@+id/addChildButton"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="113dp"
+        android:text="Edit Child" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/editChildButton"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="18dp"
+        android:text="Cancel" />
 
 </RelativeLayout>

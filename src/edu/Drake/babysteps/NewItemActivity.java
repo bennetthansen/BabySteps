@@ -1,6 +1,5 @@
 package edu.Drake.babysteps;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,36 +11,28 @@ import android.widget.Button;
 
 public class NewItemActivity extends Activity {
 
-private static final String TAG = "NewItemActivity";
-	
-	Button buttonS;
-	Button buttonC;
-	
+	Button saveButton;
+	Button cancelButton;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_item);
-		buttonS = (Button) findViewById(R.id.saveButton);
-		buttonS.setOnClickListener(new OnClickListener(){
+
+		saveButton = (Button) findViewById(R.id.saveButton);
+		saveButton.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				//Goes to myListActivity when clicked
-			Log.v(TAG, "button pressed");
-			Intent intent = new Intent(v.getContext(), MyListsActivity.class);
-			startActivity(intent);
+				finish();
 			}
 		});
-		
+
 		//Code for Top Cancel button
-		buttonC = (Button) findViewById(R.id.cancelButton);
-		buttonC.setOnClickListener(new OnClickListener() {
+		cancelButton = (Button) findViewById(R.id.cancelButton);
+		cancelButton.setOnClickListener(new OnClickListener() {
 			@Override
-			public void onClick(View v)
-			{		
-				// Goes to myListActivity when clicked
-				Log.v(TAG, "button pressed");
-				Intent intent2 = new Intent(v.getContext(), MyListsActivity.class);
-				startActivity(intent2);
+			public void onClick(View v) {		
+				finish();
 			}
 		});
 	}

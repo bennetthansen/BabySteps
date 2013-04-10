@@ -10,24 +10,50 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class ChildListActivity extends Activity {
-	
-private static final String TAG = "ChildListActivity";
-	
-	Button buttonN;
+
+	Button addChildButton;
+	Button editChildButton;
+	Button saveButton;
+	Button cancelButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_child_list);
-		
-		buttonN = (Button) findViewById(R.id.nextButton);
-		buttonN.setOnClickListener(new OnClickListener(){
+
+		addChildButton = (Button) findViewById(R.id.addChildButton);
+		addChildButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				//Goes to ChildSettingsActivity when clicked
-			Log.v(TAG, "button pressed");
-			Intent intent = new Intent(v.getContext(), ChildSettingsActivity.class);
-			startActivity(intent);
+				Intent intent = new Intent(v.getContext(), ChildSettingsActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		editChildButton = (Button) findViewById(R.id.editChildButton);
+		editChildButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				//Goes to ChildSettingsActivity when clicked
+				Intent intent = new Intent(v.getContext(), ChildSettingsActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		saveButton = (Button) findViewById(R.id.saveButton);
+		saveButton.setOnClickListener(new OnClickListener () {
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+		
+		cancelButton = (Button) findViewById(R.id.cancelButton);
+		cancelButton.setOnClickListener(new OnClickListener () {
+			@Override
+			public void onClick(View v) {
+				finish();
 			}
 		});
 

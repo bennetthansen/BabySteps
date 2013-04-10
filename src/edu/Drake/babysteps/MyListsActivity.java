@@ -12,6 +12,7 @@ import android.widget.ImageView;
 public class MyListsActivity extends Activity {
 	
 	Button newListButton;
+	Button listDetailButton;
 	ImageView backgroundImage;
 	int listCount = 0;
 	static boolean first = true;
@@ -23,6 +24,16 @@ public class MyListsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_lists);
 		
+		listDetailButton = (Button) findViewById(R.id.listDetailButton);
+		listDetailButton.setOnClickListener(new OnClickListener() {
+        	@Override
+        	public void onClick(View v) {
+        		Intent intent = new Intent(v.getContext(), ChecklistActivity.class);
+        		startActivity(intent);
+        	}
+        });
+		listDetailButton.setVisibility(View.GONE);
+		
 		if (!first) {
 			Bundle extras = getIntent().getExtras();
 			listCount = extras.getInt("listCount");
@@ -31,9 +42,10 @@ public class MyListsActivity extends Activity {
 		backgroundImage = (ImageView) findViewById(R.id.imageView1);
 		if (listCount > 0) {
 			backgroundImage.setImageResource(R.drawable.mylists);
+			listDetailButton.setVisibility(View.VISIBLE);
 		}
 		
-		newListButton = (Button) findViewById(R.id.button1);
+		newListButton = (Button) findViewById(R.id.newListButton);
         newListButton.setOnClickListener(new OnClickListener() {
         	@Override
         	public void onClick(View v) {

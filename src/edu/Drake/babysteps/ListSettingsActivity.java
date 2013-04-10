@@ -12,6 +12,7 @@ public class ListSettingsActivity extends Activity {
 	
 	Button saveButton;
 	Button cancelButton;
+	Button selectChildrenButton;
 	int listCount;
 
 	@Override
@@ -22,7 +23,7 @@ public class ListSettingsActivity extends Activity {
 		Bundle extras = getIntent().getExtras();
 		listCount = extras.getInt("listCount");
 		
-		saveButton = (Button) findViewById(R.id.button1);
+		saveButton = (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new OnClickListener() {
         	@Override
         	public void onClick(View v) {
@@ -33,12 +34,21 @@ public class ListSettingsActivity extends Activity {
         	}
         });
         
-        cancelButton = (Button) findViewById(R.id.button2);
+        cancelButton = (Button) findViewById(R.id.cancelButton);
         cancelButton.setOnClickListener(new OnClickListener() {
         	@Override
         	public void onClick(View v) {
         		finish();
         	}
+        });
+        
+        selectChildrenButton = (Button) findViewById(R.id.selectChildrenButton);
+        selectChildrenButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(v.getContext(), ChildListActivity.class);
+				startActivity(intent);
+			}
         });
 	}
 

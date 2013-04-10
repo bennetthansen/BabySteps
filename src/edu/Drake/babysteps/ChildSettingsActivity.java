@@ -10,24 +10,28 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class ChildSettingsActivity extends Activity {
-	
-private static final String TAG = "ChildSettingsActivity";
-	
-	Button buttonC;
+
+	Button saveButton;
+	Button cancelButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_child_settings);
-		
-		buttonC = (Button) findViewById(R.id.continueButton);
-		buttonC.setOnClickListener(new OnClickListener(){
+
+		saveButton = (Button) findViewById(R.id.saveButton);
+		saveButton.setOnClickListener(new OnClickListener(){
 			@Override
 			public void onClick(View v) {
-				//Goes to MyListActivity when clicked
-			Log.v(TAG, "button pressed");
-			Intent intent = new Intent(v.getContext(), MyListsActivity.class);
-			startActivity(intent);
+				finish();
+			}
+		});
+		
+		cancelButton = (Button) findViewById(R.id.cancelButton);
+		cancelButton.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View v) {
+				finish();
 			}
 		});
 	}
