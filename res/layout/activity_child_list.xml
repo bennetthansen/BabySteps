@@ -28,25 +28,6 @@
         android:text="Save" />
 
     <Button
-        android:id="@+id/addChildButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/saveButton"
-        android:layout_below="@+id/saveButton"
-        android:layout_marginTop="20dp"
-        android:text="Add Child" />
-
-    <Button
-        android:id="@+id/editChildButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/imageView1"
-        android:layout_below="@+id/addChildButton"
-        android:layout_marginRight="22dp"
-        android:layout_marginTop="113dp"
-        android:text="Edit Child" />
-
-    <Button
         android:id="@+id/cancelButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,5 +36,31 @@
         android:layout_marginRight="32dp"
         android:layout_marginTop="18dp"
         android:text="Cancel" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignRight="@+id/imageView1"
+        android:layout_below="@+id/saveButton"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addChildButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/saveButton"
+        android:layout_alignTop="@+id/linearLayout1"
+        android:text="Add Child" />
+
+    <Button
+        android:id="@+id/editChildButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addChildButton"
+        android:layout_toLeftOf="@+id/linearLayout1"
+        android:text="Edit Child" />
 
 </RelativeLayout>
