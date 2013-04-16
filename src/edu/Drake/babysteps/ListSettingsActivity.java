@@ -20,8 +20,8 @@ public class ListSettingsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_settings);
 		
-		Bundle extras = getIntent().getExtras();
-		listCount = extras.getInt("listCount");
+		//Bundle extras = getIntent().getExtras();
+		//listCount = extras.getInt("listCount");
 		
 		saveButton = (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new OnClickListener() {

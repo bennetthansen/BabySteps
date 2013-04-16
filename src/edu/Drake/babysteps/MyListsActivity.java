@@ -1,60 +1,48 @@
 package edu.Drake.babysteps;
 
-import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ListView;
 
-public class MyListsActivity extends Activity {
-	
+public class MyListsActivity extends ListActivity {
+
 	Button newListButton;
-	Button listDetailButton;
-	ImageView backgroundImage;
-	int listCount = 0;
-	static boolean first = true;
-	
-	// Test comment
+	ListView lv = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_lists);
-		
-		listDetailButton = (Button) findViewById(R.id.listDetailButton);
-		listDetailButton.setOnClickListener(new OnClickListener() {
-        	@Override
-        	public void onClick(View v) {
-        		Intent intent = new Intent(v.getContext(), ChecklistActivity.class);
-        		startActivity(intent);
-        	}
-        });
-		listDetailButton.setVisibility(View.GONE);
-		
-		if (!first) {
-			Bundle extras = getIntent().getExtras();
-			listCount = extras.getInt("listCount");
-		}
-		
-		backgroundImage = (ImageView) findViewById(R.id.imageView1);
-		if (listCount > 0) {
-			backgroundImage.setImageResource(R.drawable.mylists);
-			listDetailButton.setVisibility(View.VISIBLE);
-		}
-		
+
 		newListButton = (Button) findViewById(R.id.newListButton);
-        newListButton.setOnClickListener(new OnClickListener() {
-        	@Override
-        	public void onClick(View v) {
-        		first = false;
-        		Intent intent = new Intent(v.getContext(), ListSettingsActivity.class);
-        		intent.putExtra("listCount", (int)listCount);
-        		startActivity(intent);
-        	}
-        });
+		newListButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(v.getContext(), ListSettingsActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		this.lv = getListView();
+		String[] packing_lists = getResources().getStringArray(R.array.packing_lists);
+		lv.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, R.id.label, packing_lists));
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				Intent intent = new Intent(getApplicationContext(), ChecklistActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 
 	@Override
