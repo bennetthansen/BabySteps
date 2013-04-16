@@ -52,5 +52,13 @@
         android:layout_below="@+id/quantityText"
         android:layout_marginTop="28dp"
         android:background="#6D7B8D" />
+    
+        <Button
+        android:id="@+id/showPopUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/numberPicker"
+        android:layout_toRightOf="@+id/saveButton"
+        android:text="Pop Up Demo" />
 
 </RelativeLayout>

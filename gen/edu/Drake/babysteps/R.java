@@ -35,7 +35,11 @@ public final class R {
         public static final int practice=0x7f020007;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int action_settings=0x7f090020;
+=======
+        public static final int action_settings=0x7f090022;
+>>>>>>> f85fb6f1d00489676f5f5d1ca99b21b90abecaea
         public static final int addChildButton=0x7f090007;
         public static final int backButton=0x7f090001;
         public static final int button1=0x7f090015;
@@ -62,6 +66,7 @@ public final class R {
         public static final int saveButton=0x7f090003;
         public static final int selectChildrenButton=0x7f090014;
         public static final int sendButton=0x7f090010;
+        public static final int showPopUpButton=0x7f090021;
         public static final int subjectContentText=0x7f09000d;
         public static final int subjectText=0x7f09000e;
         public static final int textView1=0x7f090009;

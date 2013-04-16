@@ -1,9 +1,9 @@
 package edu.Drake.babysteps;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,8 +35,36 @@ public class NewItemActivity extends Activity {
 				finish();
 			}
 		});
-	}
+		
+		Button showPopUpButton = (Button) findViewById(R.id.showPopUpButton);
+		showPopUpButton.setOnClickListener(new OnClickListener() {
 
+		 @Override
+		 public void onClick(View v) {
+		  showSimplePopUp();
+		 }
+		});
+	}
+	
+	private void showSimplePopUp() {
+
+		 AlertDialog.Builder firstPopUp = new AlertDialog.Builder(this);
+		 firstPopUp.setTitle("Pop Up");
+		 firstPopUp.setMessage("This is a Simple Pop Up");
+		 firstPopUp.setPositiveButton("Ok",
+		   new DialogInterface.OnClickListener() {
+
+		    public void onClick(DialogInterface dialog, int which) {
+		     // Do nothing but close the dialog
+		    }
+		   });
+
+		 // Remember, create doesn't show the dialog
+		 AlertDialog helpDialog = firstPopUp.create();
+		 helpDialog.show();
+		 
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
