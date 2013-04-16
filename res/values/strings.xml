@@ -19,5 +19,12 @@
     <string name="subject_text">Subject:</string>
     <string name="next_button">Next</string>
     <string name="continue_button">Continue</string>
+    <string name="child_age">Child Age</string>
+    <string-array name="child_ages">
+        <item >0 &#8211; 6</item>
+        <item >7 &#8211; 12</item>
+        <item >13 &#8211; 18</item>
+        <item >19 &#8211; 24</item>
+    </string-array>
 
 </resources>

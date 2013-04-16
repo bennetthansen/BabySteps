@@ -9,7 +9,11 @@ package edu.Drake.babysteps;
 
 public final class R {
     public static final class array {
+<<<<<<< HEAD
         public static final int packing_lists=0x7f050000;
+=======
+        public static final int child_ages=0x7f060000;
+>>>>>>> 677552fb0c0f8dd6be4335dda6ccd4d50bdc3488
     }
     public static final class attr {
     }
@@ -34,6 +38,7 @@ public final class R {
         public static final int practice=0x7f020007;
     }
     public static final class id {
+<<<<<<< HEAD
         public static final int action_settings=0x7f090016;
         public static final int addChildButton=0x7f090005;
         public static final int backButton=0x7f090001;
@@ -57,6 +62,42 @@ public final class R {
         public static final int subjectText=0x7f09000a;
         public static final int textView2=0x7f090008;
         public static final int toText=0x7f090007;
+=======
+        public static final int action_settings=0x7f090021;
+        public static final int addChildButton=0x7f090007;
+        public static final int backButton=0x7f090001;
+        public static final int button1=0x7f090015;
+        public static final int button2=0x7f090016;
+        public static final int button3=0x7f090017;
+        public static final int button4=0x7f090018;
+        public static final int button5=0x7f090019;
+        public static final int cancelButton=0x7f090004;
+        public static final int ccText=0x7f090013;
+        public static final int childagespinner=0x7f09000a;
+        public static final int contentText=0x7f09000f;
+        public static final int editChildButton=0x7f090005;
+        public static final int editText1=0x7f090008;
+        public static final int emailCCText=0x7f090012;
+        public static final int emailText=0x7f090011;
+        public static final int imageView1=0x7f090000;
+        public static final int itemText=0x7f09001f;
+        public static final int linearLayout1=0x7f090006;
+        public static final int listDetailButton=0x7f09001e;
+        public static final int listview=0x7f09001c;
+        public static final int newItemButton=0x7f090002;
+        public static final int newListButton=0x7f09001d;
+        public static final int numberPicker=0x7f09001a;
+        public static final int quantityText=0x7f090020;
+        public static final int saveButton=0x7f090003;
+        public static final int selectChildrenButton=0x7f090014;
+        public static final int sendButton=0x7f090010;
+        public static final int subjectContentText=0x7f09000d;
+        public static final int subjectText=0x7f09000e;
+        public static final int textView1=0x7f090009;
+        public static final int textView2=0x7f09000c;
+        public static final int textView3=0x7f09001b;
+        public static final int toText=0x7f09000b;
+>>>>>>> 677552fb0c0f8dd6be4335dda6ccd4d50bdc3488
     }
     public static final class layout {
         public static final int activity_checklist=0x7f030000;
@@ -78,6 +119,7 @@ public final class R {
         public static final int new_item=0x7f080006;
     }
     public static final class string {
+<<<<<<< HEAD
         public static final int action_settings=0x7f060002;
         public static final int app_name=0x7f060000;
         public static final int cancel_button=0x7f06000a;
@@ -96,6 +138,27 @@ public final class R {
         public static final int title_activity_list_settings=0x7f060007;
         public static final int title_activity_new_item=0x7f060008;
         public static final int to_text=0x7f06000d;
+=======
+        public static final int action_settings=0x7f050002;
+        public static final int app_name=0x7f050000;
+        public static final int cancel_button=0x7f05000a;
+        public static final int cc_text=0x7f05000e;
+        public static final int child_age=0x7f050012;
+        public static final int continue_button=0x7f050011;
+        public static final int hello_world=0x7f050001;
+        public static final int next_button=0x7f050010;
+        public static final int quantity_text=0x7f05000b;
+        public static final int save_button=0x7f050009;
+        public static final int send_button=0x7f05000c;
+        public static final int subject_text=0x7f05000f;
+        public static final int title_activity_checklist=0x7f050003;
+        public static final int title_activity_child_list=0x7f050004;
+        public static final int title_activity_child_settings=0x7f050005;
+        public static final int title_activity_email=0x7f050006;
+        public static final int title_activity_list_settings=0x7f050007;
+        public static final int title_activity_new_item=0x7f050008;
+        public static final int to_text=0x7f05000d;
+>>>>>>> 677552fb0c0f8dd6be4335dda6ccd4d50bdc3488
     }
     public static final class style {
         /** 
