@@ -36,7 +36,7 @@ public class MyListsActivity extends ListActivity {
 
 		this.lv = getListView();
 		String[] packing_lists = getResources().getStringArray(R.array.packing_lists);
-		lv.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, R.id.label, packing_lists));
+		lv.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, R.id.listName, packing_lists));
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				Intent intent = new Intent(getApplicationContext(), ChecklistActivity.class);
