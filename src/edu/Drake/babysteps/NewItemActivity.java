@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 
 public class NewItemActivity extends Activity {
@@ -16,6 +17,8 @@ public class NewItemActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_item);
 
