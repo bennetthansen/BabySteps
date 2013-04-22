@@ -48,19 +48,20 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/addChildButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/saveButton"
-        android:layout_alignTop="@+id/linearLayout1"
-        android:text="Add Child" />
-
-    <Button
         android:id="@+id/editChildButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/addChildButton"
         android:layout_toLeftOf="@+id/linearLayout1"
         android:text="Edit Child" />
+
+    <Button
+        android:id="@+id/addChildButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/saveButton"
+        android:layout_alignTop="@+id/linearLayout1"
+        android:layout_marginTop="26dp"
+        android:text="Add Child" />
 
 </RelativeLayout>
