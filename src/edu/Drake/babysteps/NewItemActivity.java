@@ -52,15 +52,35 @@ public class NewItemActivity extends Activity {
 	private void showSimplePopUp() {
 
 		 AlertDialog.Builder firstPopUp = new AlertDialog.Builder(this);
-		 firstPopUp.setTitle("Pop Up");
+		 firstPopUp.setTitle("Quantity");
 		 firstPopUp.setMessage("This is a Simple Pop Up");
-		 firstPopUp.setPositiveButton("Ok",
-		   new DialogInterface.OnClickListener() {
+		 
+		 /*
+	     NumberPicker qp = new NumberPicker(NewItemActivity.this);
+	     String[] n = new String[100];
+	     for(int i=0; i<n.length; i++)
+	            n[i] = Integer.toString(i);
+
+	     qp.setMinValue(1);
+	     qp.setMaxValue(n.length-1);
+	     qp.setWrapSelectorWheel(false);
+	     qp.setDisplayedValues(n);
+	     qp.setValue(0);
+	     firstPopUp.setView(qp); */
+		 
+		 firstPopUp.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
 		    public void onClick(DialogInterface dialog, int which) {
-		     // Do nothing but close the dialog
+		     // Do nothing but close the dialog. Will become the ok button
 		    }
 		   });
+		 
+		 firstPopUp.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+			
+			 public void onClick(DialogInterface dialog, int which) {
+				 //Nothing but close. Will be the cancel button
+			 }
+		 });
 
 		 // Remember, create doesn't show the dialog
 		 AlertDialog helpDialog = firstPopUp.create();

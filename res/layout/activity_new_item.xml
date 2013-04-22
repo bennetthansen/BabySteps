@@ -43,7 +43,8 @@
             android:layout_below="@+id/cancelButton"
             android:layout_marginTop="28dp"
             android:ems="10"
-            android:paddingRight="@dimen/activity_horizontal_margin" />
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:hint="Item Name" />
 
         <EditText
             android:id="@+id/editText1"
@@ -55,6 +56,7 @@
             android:layout_toLeftOf="@+id/itemText"
             android:ems="10"
             android:inputType="number"
-            android:paddingLeft="@dimen/activity_horizontal_margin" />
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:hint="#" />
 
 </RelativeLayout>
