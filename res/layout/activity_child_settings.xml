@@ -11,7 +11,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:scaleType="fitStart"
-        android:src="@drawable/save_cancel_bar" />
+        android:src="@drawable/save_cancel_new" />
     
     <Button
         android:id="@+id/saveButton"
