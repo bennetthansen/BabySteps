@@ -6,38 +6,18 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ListSettingsActivity" >
 
-    <ImageView
-        android:id="@+id/imageView1"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/listsettings" />
-
-    <Button
-        android:id="@+id/selectChildrenButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_alignRight="@+id/imageView1"
-        android:layout_marginBottom="118dp"
-        android:text="Select Children" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_alignLeft="@+id/imageView1"
-        android:layout_alignRight="@+id/imageView1"
         android:layout_below="@+id/saveButton"
-        android:layout_marginLeft="14dp"
         android:orientation="vertical" >
 
         <EditText
             android:id="@+id/editText1"
-            android:layout_width="match_parent"
+            android:layout_width="306dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="List name" >
@@ -49,47 +29,54 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DESTINATION WEATHER" />
+            android:text="DESTINATION WEATHER"
+            android:textColor="#e198a3" />
+        
+        <View   
+            android:id="@+id/firstDivider"
+        	android:layout_height="2dp"
+        	android:layout_width="fill_parent"
+        	android:background="#D8D8BF" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.00" >
 
-            <Button
-                android:id="@+id/button1"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                android:padding="5dp"
+                android:src="@drawable/sunny" />
 
-            <Button
-                android:id="@+id/button2"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                android:padding="5dp"
+                android:src="@drawable/rainy" />
 
-            <Button
-                android:id="@+id/button3"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                android:padding="5dp"
+                android:src="@drawable/snowy" />
 
-            <Button
-                android:id="@+id/button4"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                android:padding="5dp"
+                android:src="@drawable/hot" />
 
-            <Button
-                android:id="@+id/button5"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Button" />
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                android:padding="5dp"
+                android:src="@drawable/cold" />
 
         </LinearLayout>
 
@@ -97,7 +84,14 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TRIP DURATION" />
+            android:text="TRIP DURATION" 
+            android:textColor="#e198a3"/>
+        
+        <View   
+            android:id="@+id/firstDivider"
+        	android:layout_height="2dp"
+        	android:layout_width="fill_parent"
+        	android:background="#D8D8BF" />
 
         <android.widget.NumberPicker
             android:id="@+id/numberPicker"
@@ -109,7 +103,21 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CHILDREN" />
+            android:text="CHILDREN"
+            android:textColor="#e198a3" />
+        
+        <View   
+            android:id="@+id/firstDivider"
+        	android:layout_height="2dp"
+        	android:layout_width="fill_parent"
+        	android:background="#D8D8BF" />
+
+        <Button
+            android:id="@+id/selectChildrenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="118dp"
+            android:text="Select Children" />
 
     </LinearLayout>
 

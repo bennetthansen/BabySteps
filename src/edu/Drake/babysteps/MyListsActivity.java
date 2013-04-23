@@ -1,7 +1,6 @@
 package edu.Drake.babysteps;
 
-import android.app.Activity;
-import android.content.Context;
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,16 +9,14 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
-public class MyListsActivity extends Activity {
+public class MyListsActivity extends ListActivity {
 
 	Button newListButton;
-	//ListView lv = null;
-	private ListView listView1;
+	ListView lv = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,38 +34,7 @@ public class MyListsActivity extends Activity {
 			}
 		});
 
-		PackingList packing_list_data[] = new PackingList[]
-				{
-				new PackingList("Park", "03/04/13", "4 of 12 items"),
-				new PackingList("Miami Vacation", "03/08/13", "7 of 21 items"),
-				new PackingList("In-Laws", "03/14/13", "1 of 11 items"),
-				new PackingList("Hiking Trip", "03/17/13", "1 of 1 items"),
-				new PackingList("Day Care", "04/01/13", "3 of 9 items")
-				};
-
-		PackingListAdapter adapter = new PackingListAdapter(this, R.layout.list_item, packing_list_data);
-
-		listView1 = (ListView)findViewById(R.id.listView1);
-		listView1.setAdapter(adapter);
-		listView1.setOnItemLongClickListener(new OnItemLongClickListener() {
-			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-				/*Context context = getApplicationContext();
-				CharSequence text = "Hello toast!";
-				int duration = Toast.LENGTH_SHORT;*/
-
-				Toast toast = Toast.makeText(getApplicationContext(), "Long press received", Toast.LENGTH_SHORT);
-				toast.show();
-				return true;
-			}
-		});
-		listView1.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Intent intent = new Intent(getApplicationContext(), ChecklistActivity.class);
-				startActivity(intent);
-			}
-		});
-
-		/*this.lv = getListView();
+		this.lv = getListView();
 		String[] packing_lists = getResources().getStringArray(R.array.packing_lists);
 		lv.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, R.id.listName, packing_lists));
 		lv.setOnItemClickListener(new OnItemClickListener() {
@@ -76,7 +42,7 @@ public class MyListsActivity extends Activity {
 				Intent intent = new Intent(getApplicationContext(), ChecklistActivity.class);
 				startActivity(intent);
 			}
-		});*/
+		});
 	}
 
 	@Override

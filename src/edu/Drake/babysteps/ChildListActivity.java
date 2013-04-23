@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class ChildListActivity extends Activity {
 
-	Button addChildButton;
+	//Button addChildImage;
 	Button editChildButton;
 	Button saveButton;
 	Button cancelButton;
@@ -23,15 +23,15 @@ public class ChildListActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_child_list);
 
-		addChildButton = (Button) findViewById(R.id.addChildButton);
-		addChildButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
+		//addChildImage = (Button) findViewById(R.id.addChildImage);
+		//addChildImage.setOnClickListener(new OnClickListener() {
+		//	@Override
+		//	public void onClick(View v) {
 				//Goes to ChildSettingsActivity when clicked
-				Intent intent = new Intent(v.getContext(), ChildSettingsActivity.class);
-				startActivity(intent);
-			}
-		});
+		//		Intent intent = new Intent(v.getContext(), ChildSettingsActivity.class);
+		//		startActivity(intent);
+		//	}
+	//	});
 		
 		editChildButton = (Button) findViewById(R.id.editChildButton);
 		editChildButton.setOnClickListener(new OnClickListener() {
