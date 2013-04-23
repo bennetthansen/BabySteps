@@ -20,6 +20,17 @@
         android:textSize="10dip" >
         
     </TextView>
+    
+    <TextView
+        android:id="@+id/listProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/listName"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:textColor="#808080"
+        android:textSize="15dip" >
+     </TextView> 
         
 
 </RelativeLayout>
