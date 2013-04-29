@@ -3,12 +3,16 @@ package edu.Drake.babysteps;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
+//import android.widget.NumberPicker;
 
 public class NewItemActivity extends Activity {
 
@@ -52,11 +56,17 @@ public class NewItemActivity extends Activity {
 	private void showSimplePopUp() {
 
 		AlertDialog.Builder firstPopUp = new AlertDialog.Builder(this);
-		firstPopUp.setTitle("Quantity");
-		firstPopUp.setMessage("This is a Simple Pop Up");
-
-		/*
-	     NumberPicker qp = new NumberPicker(NewItemActivity.this);
+		//create a textview for centered title
+		TextView titleMsg = new TextView(this);
+		titleMsg.setText("Quantity");
+		titleMsg.setGravity(Gravity.CENTER_HORIZONTAL);
+		titleMsg.setTextSize(20);
+		titleMsg.setTextColor(Color.parseColor("#15a7e1"));
+		
+		firstPopUp.setCustomTitle(titleMsg);
+		//firstPopUp.setMessage("This is a Simple Pop Up");
+		
+	     /*NumberPicker qp = (NumberPicker) findViewById(R.id.npicker);
 	     String[] n = new String[100];
 	     for(int i=0; i<n.length; i++)
 	            n[i] = Integer.toString(i);
