@@ -18,7 +18,7 @@ public class NewItemActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_item);
 
@@ -38,24 +38,24 @@ public class NewItemActivity extends Activity {
 				finish();
 			}
 		});
-		
+
 		Button showPopUpButton = (Button) findViewById(R.id.showPopUpButton);
 		showPopUpButton.setOnClickListener(new OnClickListener() {
 
-		 @Override
-		 public void onClick(View v) {
-		  showSimplePopUp();
-		 }
+			@Override
+			public void onClick(View v) {
+				showSimplePopUp();
+			}
 		});
 	}
-	
+
 	private void showSimplePopUp() {
 
-		 AlertDialog.Builder firstPopUp = new AlertDialog.Builder(this);
-		 firstPopUp.setTitle("Quantity");
-		 firstPopUp.setMessage("This is a Simple Pop Up");
-		 
-		 /*
+		AlertDialog.Builder firstPopUp = new AlertDialog.Builder(this);
+		firstPopUp.setTitle("Quantity");
+		firstPopUp.setMessage("This is a Simple Pop Up");
+
+		/*
 	     NumberPicker qp = new NumberPicker(NewItemActivity.this);
 	     String[] n = new String[100];
 	     for(int i=0; i<n.length; i++)
@@ -67,27 +67,27 @@ public class NewItemActivity extends Activity {
 	     qp.setDisplayedValues(n);
 	     qp.setValue(0);
 	     firstPopUp.setView(qp); */
-		 
-		 firstPopUp.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
-		    public void onClick(DialogInterface dialog, int which) {
-		     // Do nothing but close the dialog. Will become the ok button
-		    }
-		   });
-		 
-		 firstPopUp.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-			
-			 public void onClick(DialogInterface dialog, int which) {
-				 //Nothing but close. Will be the cancel button
-			 }
-		 });
+		firstPopUp.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
-		 // Remember, create doesn't show the dialog
-		 AlertDialog helpDialog = firstPopUp.create();
-		 helpDialog.show();
-		 
+			public void onClick(DialogInterface dialog, int which) {
+				// Do nothing but close the dialog. Will become the ok button
+			}
+		});
+
+		firstPopUp.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+			public void onClick(DialogInterface dialog, int which) {
+				//Nothing but close. Will be the cancel button
+			}
+		});
+
+		// Remember, create doesn't show the dialog
+		AlertDialog helpDialog = firstPopUp.create();
+		helpDialog.show();
+
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

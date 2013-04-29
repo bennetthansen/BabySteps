@@ -22,7 +22,7 @@
         android:padding="10dp"
         android:layout_marginLeft="40dp"
         android:text="Add item"
-        android:textColor="#FF8888"
+        android:textColor="#e198a3"
         android:textSize="20dp" />
 
 </RelativeLayout>

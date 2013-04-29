@@ -1,17 +1,15 @@
 package edu.Drake.babysteps;
 
 public class Checklist {
-    public String title;
-    public String date;
-    public String progress;
+    public String itemName;
+    public String itemQuantity;
     public Checklist(){
         super();
     }
     
-    public Checklist(String title, String date, String progress) {
+    public Checklist(String itemName, String itemQuantity) {
         super();
-        this.title = title;
-        this.date = date;
-        this.progress = progress;
+        this.itemName = itemName;
+        this.itemQuantity = itemQuantity;
     }
 }

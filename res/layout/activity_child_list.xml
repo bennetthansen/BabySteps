@@ -56,7 +56,6 @@
                 android:text="Add Child"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textColor="#e198a3" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -67,10 +66,13 @@
                 android:id="@+id/checkBox1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Child Name" 
-                android:textColor="#00FFFF"/>
-            <ImageView android:id="@+id/imageView2" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                android:text="Child Name"
+                android:textColor="#00FFFF" />
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </LinearLayout>
 
         <LinearLayout
@@ -83,7 +85,6 @@
                 android:layout_height="wrap_content"
                 android:text="Child Name"
                 android:textColor="#00FFFF" />
-
         </LinearLayout>
 
         <CheckBox
@@ -104,14 +105,16 @@
             android:id="@+id/saveButton"
             android:layout_width="155dp"
             android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
             android:background="@android:color/transparent" />
 
         <ImageButton
             android:id="@+id/imageButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/arrow"
-            android:background="@android:color/transparent" />
+            android:background="@android:color/transparent"
+            android:src="@drawable/arrow" />
 
         <Button
             android:id="@+id/cancelButton"
@@ -119,14 +122,14 @@
             android:layout_height="40dp"
             android:background="@android:color/transparent" />
 
-    <Button
-        android:id="@+id/editChildButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/imageView2"
-        android:text="Edit Child" />
-</LinearLayout>
+        <Button
+            android:id="@+id/editChildButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/imageView2"
+            android:text="Edit Child" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView5"

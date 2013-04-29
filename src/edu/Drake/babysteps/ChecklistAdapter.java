@@ -32,9 +32,8 @@ public class ChecklistAdapter extends ArrayAdapter<Checklist>{
             row = inflater.inflate(layoutResourceId, parent, false);
             
             holder = new ChecklistHolder();
-            holder.checklistDate = (TextView)row.findViewById(R.id.checklistDate);
-            holder.checklistName = (TextView)row.findViewById(R.id.checklistName);
-            holder.checklistProgress = (TextView)row.findViewById(R.id.checklistProgress);
+            holder.checklistItemName = (TextView)row.findViewById(R.id.checklistItemName);
+            holder.checklistItemQuantity = (TextView)row.findViewById(R.id.checklistItemQuantity);
             
             row.setTag(holder);
         }
@@ -44,17 +43,15 @@ public class ChecklistAdapter extends ArrayAdapter<Checklist>{
         }
         
         Checklist checklist = data[position];
-        holder.checklistName.setText(checklist.title);
-        holder.checklistDate.setText(checklist.date);
-        holder.checklistProgress.setText(checklist.progress);
+        holder.checklistItemName.setText(checklist.itemName);
+        holder.checklistItemQuantity.setText(checklist.itemQuantity);
         
         return row;
     }
     
     static class ChecklistHolder
     {
-        TextView checklistDate;
-        TextView checklistName;
-        TextView checklistProgress;
+        TextView checklistItemName;
+        TextView checklistItemQuantity;
     }
 }

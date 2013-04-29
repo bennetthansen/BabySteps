@@ -15,51 +15,58 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class ChecklistActivity extends Activity {
-	
+
 	Button backButton;
 	Button newItemButton;
+	Button optionsButton;
 	private ListView checklist;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_checklist);
-		
+
 		backButton = (Button) findViewById(R.id.backButton);
 		backButton.setOnClickListener(new OnClickListener() {
-        	@Override
-        	public void onClick(View v) {
-        		finish();
-        	}
-        });
-		
+			@Override
+			public void onClick(View v) {
+				finish();
+			}
+		});
+
 		newItemButton = (Button) findViewById(R.id.newItemButton);
 		newItemButton.setOnClickListener(new OnClickListener() {
-        	@Override
-        	public void onClick(View v) {
-        		Intent intent = new Intent(v.getContext(), NewItemActivity.class);
-        		startActivity(intent);
-        	}
-        });
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(v.getContext(), NewItemActivity.class);
+				startActivity(intent);
+			}
+		});
 		
+		optionsButton = (Button) findViewById(R.id.optionsButton);
+		optionsButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Toast toast = Toast.makeText(getApplicationContext(), "Opitons button clicked", Toast.LENGTH_SHORT);
+				toast.show();
+			}
+		});
+
 		Checklist checklist_data[] = new Checklist[]
 				{
-				new Checklist("Park", "03/04/13", "4 of 12 items"),
-				new Checklist("Miami Vacation", "03/08/13", "7 of 21 items"),
-				new Checklist("In-Laws", "03/14/13", "1 of 11 items"),
-				new Checklist("Hiking Trip", "03/17/13", "1 of 1 items"),
-				new Checklist("Day Care", "04/01/13", "3 of 9 items")
+				new Checklist("Diapers", "8"),
+				new Checklist("Pacifier", "1"),
 				};
 
 		ChecklistAdapter adapter = new ChecklistAdapter(this, R.layout.checklist_item, checklist_data);
 
 		checklist = (ListView)findViewById(R.id.checklistView);
 		View header = (View)getLayoutInflater().inflate(R.layout.checklist_header, null);
-        checklist.addHeaderView(header);
+		checklist.addHeaderView(header);
 		checklist.setAdapter(adapter);
-		
+
 		checklist.setOnItemLongClickListener(new OnItemLongClickListener() {
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 				Toast toast = Toast.makeText(getApplicationContext(), "Long press received", Toast.LENGTH_SHORT);
@@ -75,7 +82,7 @@ public class ChecklistActivity extends Activity {
 				toast.show();
 			}
 		});
-		
+
 	}
 
 	@Override

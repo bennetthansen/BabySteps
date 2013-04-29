@@ -4,37 +4,33 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+    
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="10dp" >
+        
+    </CheckBox>
+    
     <TextView
-        android:id="@+id/checklistName"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:id="@+id/checklistItemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/checkbox"
+        android:textSize="20dip" >
+    </TextView>        
+    
+    <TextView
+        android:id="@+id/checklistItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/checklistItemQuantity"
         android:textSize="20dip" >
     </TextView>
-    
-    <TextView
-        android:id="@+id/checklistDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/checklistName"
-        android:layout_marginLeft="10dp"
-        android:textColor="#808080"
-        android:textSize="15dip" >
-        
-    </TextView>
-    
-    <TextView
-        android:id="@+id/checklistProgress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/checklistName"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:textColor="#808080"
-        android:textSize="15dip" >
-     </TextView> 
-        
 
 </RelativeLayout>

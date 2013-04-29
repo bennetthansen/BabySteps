@@ -5,58 +5,63 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".NewItemActivity" >
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/itemText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/save_cancel_new" />
+
     <Button
         android:id="@+id/cancelButton"
-        android:layout_width="157dp"
-        android:layout_height="50dp"
+        android:layout_width="155dp"
+        android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:background="#66cccc"
-        android:textColor="#FFFFFF"
-        android:text="@string/cancel_button" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="157dp"
-        android:layout_height="50dp"
-        android:layout_alignBaseline="@+id/cancelButton"
-        android:layout_alignBottom="@+id/cancelButton"
+        android:layout_width="155dp"
+        android:layout_height="40dp"
         android:layout_alignParentLeft="true"
-        android:background="#66cccc"
-        android:textColor="#FFFFFF"
-        android:text="@string/save_button" />
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent" />
 
-        <Button
-            android:id="@+id/showPopUpButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="19dp"
-            android:text="Pop Up Demo" />
+    <Button
+        android:id="@+id/showPopUpButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:text="Pop Up Demo" />
 
-        <EditText
-            android:id="@+id/itemText"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/cancelButton"
-            android:layout_marginTop="28dp"
-            android:ems="10"
-            android:paddingRight="@dimen/activity_horizontal_margin"
-            android:hint="Item Name" />
+    <EditText
+        android:id="@+id/itemText"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/cancelButton"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Item Name"
+        android:paddingRight="@dimen/activity_horizontal_margin" />
 
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/itemText"
-            android:layout_alignBottom="@+id/itemText"
-            android:layout_marginRight="15dp"
-            android:layout_toLeftOf="@+id/itemText"
-            android:ems="10"
-            android:inputType="number"
-            android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:hint="#" />
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/itemText"
+        android:layout_alignBottom="@+id/itemText"
+        android:layout_marginRight="15dp"
+        android:layout_toLeftOf="@+id/itemText"
+        android:ems="10"
+        android:hint="#"
+        android:inputType="number"
+        android:paddingLeft="@dimen/activity_horizontal_margin" />
 
 </RelativeLayout>
