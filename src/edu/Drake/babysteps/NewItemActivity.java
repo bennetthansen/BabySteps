@@ -9,6 +9,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
@@ -43,12 +44,22 @@ public class NewItemActivity extends Activity {
 			}
 		});
 
-		Button showPopUpButton = (Button) findViewById(R.id.showPopUpButton);
+		/*Button showPopUpButton = (Button) findViewById(R.id.showPopUpButton);
 		showPopUpButton.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				showSimplePopUp();
+			}
+		});
+		*/
+		Button showPopUpButton = (Button) findViewById(R.id.showPopUpButton);
+		showPopUpButton.setOnLongClickListener(new OnLongClickListener() {
+
+			@Override
+			public boolean onLongClick(View v) {
+				showSimplePopUp();
+				return true;
 			}
 		});
 	}
