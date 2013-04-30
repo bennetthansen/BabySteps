@@ -12,6 +12,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MyListsActivity extends Activity {
@@ -19,6 +20,8 @@ public class MyListsActivity extends Activity {
 	Button newListButton;
 	//ListView lv = null;
 	private ListView listView1;
+	public static boolean noLists = true;
+	TextView tutorialText;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +29,14 @@ public class MyListsActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_lists);
+		
+		tutorialText = (TextView) findViewById(R.id.tutorialTextView);
 
 		newListButton = (Button) findViewById(R.id.newListButton);
 		newListButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				noLists = false;
 				Intent intent = new Intent(v.getContext(), ListSettingsActivity.class);
 				startActivity(intent);
 			}
@@ -47,25 +53,31 @@ public class MyListsActivity extends Activity {
 
 		PackingListAdapter adapter = new PackingListAdapter(this, R.layout.list_item, packing_list_data);
 
-		listView1 = (ListView)findViewById(R.id.listView1);
-		listView1.setAdapter(adapter);
-		listView1.setOnItemLongClickListener(new OnItemLongClickListener() {
-			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-				/*Context context = getApplicationContext();
+		if (!noLists) {
+			tutorialText.setVisibility(TextView.INVISIBLE);
+			listView1 = (ListView)findViewById(R.id.listView1);
+			listView1.setAdapter(adapter);
+			listView1.setOnItemLongClickListener(new OnItemLongClickListener() {
+				public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+					/*Context context = getApplicationContext();
 				CharSequence text = "Hello toast!";
 				int duration = Toast.LENGTH_SHORT;*/
 
-				Toast toast = Toast.makeText(getApplicationContext(), "Long press received", Toast.LENGTH_SHORT);
-				toast.show();
-				return true;
-			}
-		});
-		listView1.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				Intent intent = new Intent(getApplicationContext(), ChecklistActivity.class);
-				startActivity(intent);
-			}
-		});
+					Toast toast = Toast.makeText(getApplicationContext(), "Long press received", Toast.LENGTH_SHORT);
+					toast.show();
+					return true;
+				}
+			});
+			listView1.setOnItemClickListener(new OnItemClickListener() {
+				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+					Intent intent = new Intent(getApplicationContext(), ChecklistActivity.class);
+					startActivity(intent);
+				}
+			});
+		}
+		else {
+			tutorialText.setVisibility(TextView.VISIBLE);
+		}
 
 		/*this.lv = getListView();
 		String[] packing_lists = getResources().getStringArray(R.array.packing_lists);

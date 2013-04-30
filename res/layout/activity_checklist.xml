@@ -46,4 +46,14 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="50dp" />
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:paddingTop="8dp"
+        android:layout_toRightOf="@+id/backButton"
+        android:text="List Name"
+        android:textSize="20dp"
+        android:textColor="#FFFFFF" />
+
 </RelativeLayout>
