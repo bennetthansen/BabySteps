@@ -3,44 +3,66 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".ListSettingsActivity" >
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/save_cancel_new" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="155dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="155dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="14dp"
+        android:layout_marginLeft="20dp"
+        android:ems="10"
+        android:hint="List Name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/saveButton"
-        android:orientation="vertical" >
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/editText1"
+        android:text="DESTINATION WEATHER:"
+        android:textColor="#e198a3" />
 
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="306dp"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="List name" >
-
-            <requestFocus />
-        </EditText>
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DESTINATION WEATHER"
-            android:textColor="#e198a3" />
-        
-        <View   
-            android:id="@+id/firstDivider"
-        	android:layout_height="2dp"
-        	android:layout_width="fill_parent"
-        	android:background="#D8D8BF" />
-
-        <LinearLayout
+    <View
+        android:id="@+id/firstDivider"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/textView1"
+        android:layout_height="3dp"
+        android:background="#D8D8BF" />
+    
+    <LinearLayout
+        	android:id="@+id/weatherButtonLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/firstDivider"
+            android:paddingTop="5dp"
             android:layout_weight="0.00" >
 
             <ImageView
@@ -80,65 +102,72 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TRIP DURATION" 
-            android:textColor="#e198a3"/>
-        
-        <View   
-            android:id="@+id/firstDivider"
-        	android:layout_height="2dp"
-        	android:layout_width="fill_parent"
-        	android:background="#D8D8BF" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weatherButtonLayout"
+        android:layout_alignLeft="@+id/textView1"
+        android:paddingTop="10dp"
+        android:text="TRIP DURATION"
+        android:textColor="#e198a3" />
+    
+    <View
+        android:id="@+id/secondDivider"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/textView2"
+        android:layout_height="3dp"
+        android:background="#D8D8BF" />
 
-        <android.widget.NumberPicker
-            android:id="@+id/numberPicker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#6D7B8D" />
+    <EditText
+        android:id="@+id/numberField"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/secondDivider"
+        android:layout_marginTop="5dp"
+        android:ems="10"
+        android:hint="1"
+        android:inputType="number" >
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CHILDREN"
-            android:textColor="#e198a3" />
-        
-        <View   
-            android:id="@+id/firstDivider"
-        	android:layout_height="2dp"
-        	android:layout_width="fill_parent"
-        	android:background="#D8D8BF" />
+        <requestFocus />
+    </EditText>
 
-        <Button
-            android:id="@+id/selectChildrenButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="118dp"
-            android:text="Select Children" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/numberField"
+        android:layout_alignBottom="@+id/numberField"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/numberField"
+        android:textColor="#666666"
+        android:text="days" />
+    
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/numberField"
+        android:layout_alignLeft="@+id/textView1"
+        android:paddingTop="10dp"
+        android:text="CHILDREN"
+        android:textColor="#e198a3" />
+    
+    <View
+        android:id="@+id/thirdDivider"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/textView3"
+        android:layout_height="3dp"
+        android:background="#D8D8BF" />
 
     <Button
-        android:id="@+id/saveButton"
-        android:layout_width="157dp"
-        android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="#66cccc"
-        android:text="Save"
-        android:textColor="#FFFFFF" />
-
-    <Button
-        android:id="@+id/cancelButton"
-        android:layout_width="157dp"
-        android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="#66cccc"
-        android:text="Cancel"
-        android:textColor="#FFFFFF" />
+        android:id="@+id/selectChildrenButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_below="@+id/thirdDivider"
+        android:layout_marginTop="5dp"
+        android:text="Select children" />
 
 </RelativeLayout>
