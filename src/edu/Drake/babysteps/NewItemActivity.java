@@ -13,7 +13,8 @@ import android.view.View.OnLongClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
-//import android.widget.NumberPicker;
+
+
 
 public class NewItemActivity extends Activity {
 
@@ -78,7 +79,8 @@ public class NewItemActivity extends Activity {
 		firstPopUp.setCustomTitle(titleMsg);
 		//firstPopUp.setMessage("This is a Simple Pop Up");
 		
-	     /*NumberPicker qp = (NumberPicker) findViewById(R.id.npicker);
+		/*
+	     NumberPicker qp = (NumberPicker) findViewById(R.id.npicker);
 	     String[] n = new String[100];
 	     for(int i=0; i<n.length; i++)
 	            n[i] = Integer.toString(i);
@@ -88,8 +90,8 @@ public class NewItemActivity extends Activity {
 	     qp.setWrapSelectorWheel(false);
 	     qp.setDisplayedValues(n);
 	     qp.setValue(0);
-	     firstPopUp.setView(qp); */
-
+	     firstPopUp.setView(qp); 
+		*/
 		firstPopUp.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
 			public void onClick(DialogInterface dialog, int which) {
