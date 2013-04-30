@@ -44,15 +44,16 @@ public class NewItemActivity extends Activity {
 			}
 		});
 
-		/*Button showPopUpButton = (Button) findViewById(R.id.showPopUpButton);
-		showPopUpButton.setOnClickListener(new OnClickListener() {
+ 		TextView number = (TextView) findViewById(R.id.itemNumber);
+ 		number.setOnLongClickListener(new View.OnLongClickListener() {
 
 			@Override
-			public void onClick(View v) {
+			public boolean onLongClick(View v) {
 				showSimplePopUp();
+				return true;
 			}
 		});
-		*/
+		
 		Button showPopUpButton = (Button) findViewById(R.id.showPopUpButton);
 		showPopUpButton.setOnLongClickListener(new OnLongClickListener() {
 
