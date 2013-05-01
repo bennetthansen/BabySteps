@@ -13,6 +13,7 @@ import android.view.View.OnLongClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 
@@ -50,7 +51,7 @@ public class NewItemActivity extends Activity {
 
 			@Override
 			public boolean onLongClick(View v) {
-				showSimplePopUp();
+				holdItemDownPopUp();
 				return true;
 			}
 		});
@@ -60,54 +61,53 @@ public class NewItemActivity extends Activity {
 
 			@Override
 			public boolean onLongClick(View v) {
-				showSimplePopUp();
+				//calls the list menu function
+				showlistPopUp();
 				return true;
 			}
 		});
 	}
 
-	private void showSimplePopUp() {
-
-		AlertDialog.Builder firstPopUp = new AlertDialog.Builder(this);
-		//create a textview for centered title
-		TextView titleMsg = new TextView(this);
-		titleMsg.setText("Quantity");
-		titleMsg.setGravity(Gravity.CENTER_HORIZONTAL);
-		titleMsg.setTextSize(20);
-		titleMsg.setTextColor(Color.parseColor("#15a7e1"));
+	
+	private void showlistPopUp() {
+		AlertDialog.Builder listPopUp = new AlertDialog.Builder(this);
+		final CharSequence[] optionsList = {"Edit", "Email", "Delete"};
 		
-		firstPopUp.setCustomTitle(titleMsg);
-		//firstPopUp.setMessage("This is a Simple Pop Up");
+		listPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
+			
+			@Override
+	        public void onClick(DialogInterface dialog, int which) {
+	         // The 'which' argument contains the index position
+	         // of the selected item
+				
+				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
+	           }
+	    });
+	           
+	       	AlertDialog listDialog = listPopUp.create();
+			listDialog.show();
 		
-		/*
-	     NumberPicker qp = (NumberPicker) findViewById(R.id.npicker);
-	     String[] n = new String[100];
-	     for(int i=0; i<n.length; i++)
-	            n[i] = Integer.toString(i);
+	}
+	
+	
+	private void holdItemDownPopUp() {
 
-	     qp.setMinValue(1);
-	     qp.setMaxValue(n.length-1);
-	     qp.setWrapSelectorWheel(false);
-	     qp.setDisplayedValues(n);
-	     qp.setValue(0);
-	     firstPopUp.setView(qp); 
-		*/
-		firstPopUp.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-
-			public void onClick(DialogInterface dialog, int which) {
-				// Do nothing but close the dialog. Will become the ok button
-			}
-		});
-
-		firstPopUp.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-
-			public void onClick(DialogInterface dialog, int which) {
-				//Nothing but close. Will be the cancel button
-			}
-		});
+		AlertDialog.Builder holdPopUp = new AlertDialog.Builder(this);
+		final CharSequence[] optionsList = {"Edit", "Delete"};
+		
+		holdPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
+			
+			@Override
+	        public void onClick(DialogInterface dialog, int which) {
+	         // The 'which' argument contains the index position
+	         // of the selected item
+				
+				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
+	           }
+	    });
 
 		// Remember, create doesn't show the dialog
-		AlertDialog helpDialog = firstPopUp.create();
+		AlertDialog helpDialog = holdPopUp.create();
 		helpDialog.show();
 
 	}
