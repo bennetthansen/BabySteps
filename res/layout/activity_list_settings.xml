@@ -54,7 +54,7 @@
         android:id="@+id/firstDivider"
         android:layout_width="fill_parent"
         android:layout_below="@id/textView1"
-        android:layout_height="3dp"
+        android:layout_height="2dp"
         android:background="#D8D8BF" />
     
     <LinearLayout
@@ -116,12 +116,12 @@
         android:id="@+id/secondDivider"
         android:layout_width="fill_parent"
         android:layout_below="@id/textView2"
-        android:layout_height="3dp"
+        android:layout_height="2dp"
         android:background="#D8D8BF" />
 
     <EditText
         android:id="@+id/numberField"
-        android:layout_width="40dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/secondDivider"
@@ -158,7 +158,7 @@
         android:id="@+id/thirdDivider"
         android:layout_width="fill_parent"
         android:layout_below="@id/textView3"
-        android:layout_height="3dp"
+        android:layout_height="2dp"
         android:background="#D8D8BF" />
 
     <Button

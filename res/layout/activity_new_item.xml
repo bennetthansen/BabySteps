@@ -39,29 +39,26 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="19dp"
         android:text="Pop Up Demo" />
-
-    <EditText
-        android:id="@+id/itemText"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/cancelButton"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="Item Name"
-        android:paddingRight="@dimen/activity_horizontal_margin" />
-
+    
     <EditText
         android:id="@+id/itemNumber"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/itemText"
-        android:layout_alignBottom="@+id/itemText"
-        android:layout_marginRight="15dp"
-        android:layout_toLeftOf="@+id/itemText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="70dp"
         android:ems="10"
         android:hint="#"
-        android:inputType="number"
-        android:paddingLeft="@dimen/activity_horizontal_margin" />
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/itemText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+		android:layout_toRightOf="@+id/itemNumber"
+        android:ems="10"
+        android:hint="Item Name" />
 
 </RelativeLayout>

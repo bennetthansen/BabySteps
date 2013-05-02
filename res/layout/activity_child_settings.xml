@@ -30,32 +30,41 @@
         android:background="@android:color/transparent" />
     
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/childNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:ems="10"
         android:hint="Child Name" />
     
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/ageRangeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:paddingTop="10dp"
+        android:layout_below="@id/childNameEditText"
         android:layout_marginLeft="10dp"
         android:text="CHILD AGE RANGE"
         android:textColor="#e198a3" />
+    
+    <View
+        android:id="@+id/divider"
+        android:layout_width="fill_parent"
+        android:layout_below="@id/ageRangeTextView"
+        android:layout_height="2dp"
+        android:background="#D8D8BF" />
 
     <Spinner
         android:id="@+id/childagespinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/divider"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:entries="@array/child_ages"

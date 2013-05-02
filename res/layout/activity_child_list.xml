@@ -4,168 +4,34 @@
     android:layout_height="match_parent"
     tools:context=".ChildListActivity" >
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:scaleType="fitStart"
+        android:src="@drawable/save_cancel_new" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="155dp"
+        android:layout_height="40dp"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        android:layout_width="155dp"
+        android:layout_height="40dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:id="@+id/imageView1"
-            android:layout_width="fill_parent"
-            android:layout_height="70dp"
-            android:scaleType="fitStart"
-            android:src="@drawable/save_cancel_new" />
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="CHILDREN"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="#D8D8BF" />
-
-        <View
-            android:id="@+id/firstDivider"
-            android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:background="#D8D8BF"
-            android:paddingRight="15dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <ImageButton
-                android:id="@+id/addChildImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:src="@drawable/addchild" />
-
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="10dp"
-                android:text="Add Child"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#e198a3" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <CheckBox
-                android:id="@+id/checkBox1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Child Name"
-                android:textColor="#00FFFF" />
-
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Child Name"
-                android:textColor="#00FFFF" />
-        </LinearLayout>
-
-        <CheckBox
-            android:id="@+id/checkBox3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Child Name"
-            android:textColor="#00FFFF" />
-
-        <CheckBox
-            android:id="@+id/checkBox4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Child Name"
-            android:textColor="#00FFFF" />
-
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="155dp"
-            android:layout_height="40dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:background="@android:color/transparent" />
-
-        <ImageButton
-            android:id="@+id/imageButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:src="@drawable/arrow" />
-
-        <Button
-            android:id="@+id/cancelButton"
-            android:layout_width="155dp"
-            android:layout_height="40dp"
-            android:background="@android:color/transparent" />
-
-        <Button
-            android:id="@+id/editChildButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/imageView2"
-            android:text="Edit Child" />
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
+        android:background="@android:color/transparent" />
+    
+    <ListView
+        android:id="@+id/childList"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/imageView4"
-        android:paddingBottom="5dp"
-        android:src="@drawable/arrow" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/imageView3"
-        android:paddingBottom="5dp"
-        android:src="@drawable/arrow" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/imageView2"
-        android:paddingBottom="5dp"
-        android:src="@drawable/arrow" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="146dp"
-        android:paddingBottom="5dp"
-        android:src="@drawable/arrow" />
+        android:layout_marginTop="50dp" />
 
 </RelativeLayout>

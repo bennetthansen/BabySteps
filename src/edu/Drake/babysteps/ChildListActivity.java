@@ -7,14 +7,18 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 
 public class ChildListActivity extends Activity {
 
-	//Button addChildImage;
-	Button editChildButton;
 	Button saveButton;
 	Button cancelButton;
+	private ListView childList;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,26 +26,6 @@ public class ChildListActivity extends Activity {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_child_list);
-
-//		addChildImage = (Button) findViewById(R.id.addChildImage);
-	//	addChildImage.setOnClickListener(new OnClickListener() {
-		//	@Override
-			//public void onClick(View v) {
-				//Goes to ChildSettingsActivity when clicked
-				//Intent intent = new Intent(v.getContext(), ChildSettingsActivity.class);
-				//startActivity(intent);
-			//}
-	//	});
-		
-		editChildButton = (Button) findViewById(R.id.editChildButton);
-		editChildButton.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				//Goes to ChildSettingsActivity when clicked
-				Intent intent = new Intent(v.getContext(), ChildSettingsActivity.class);
-				startActivity(intent);
-			}
-		});
 
 		saveButton = (Button) findViewById(R.id.saveButton);
 		saveButton.setOnClickListener(new OnClickListener () {
@@ -56,6 +40,37 @@ public class ChildListActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				finish();
+			}
+		});
+		
+		ChildList child_list_data[] = new ChildList[]
+				{
+				new ChildList("Bennett"),
+				new ChildList("LeBron"),
+				};
+
+		ChildListAdapter adapter = new ChildListAdapter(this, R.layout.child_list_item, child_list_data);
+
+		childList = (ListView)findViewById(R.id.childList);
+		View header = (View)getLayoutInflater().inflate(R.layout.child_list_header, null);
+		childList.addHeaderView(header);
+		childList.setAdapter(adapter);
+
+		childList.setOnItemLongClickListener(new OnItemLongClickListener() {
+			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+				Toast toast = Toast.makeText(getApplicationContext(), "Long press received", Toast.LENGTH_SHORT);
+				toast.show();
+				return true;
+			}
+		});
+		childList.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				//Toast toast = Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT);
+				//toast.show();
+				if (position == 0) {
+					Intent intent = new Intent(getApplicationContext(), ChildSettingsActivity.class);
+					startActivity(intent); 
+				}
 			}
 		});
 
