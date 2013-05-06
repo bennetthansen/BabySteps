@@ -30,7 +30,7 @@
         android:background="@android:color/transparent" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/listNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/imageView1"
@@ -45,8 +45,8 @@
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText1"
+        android:layout_alignLeft="@+id/listNameEditText"
+        android:layout_below="@+id/listNameEditText"
         android:text="DESTINATION WEATHER:"
         android:textColor="#e198a3" />
 

@@ -8,12 +8,15 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class ListSettingsActivity extends Activity {
 	
 	Button saveButton;
 	Button cancelButton;
 	Button selectChildrenButton;
+	EditText listNameField;
+	EditText tripDurationField;
 	int listCount;
 
 	@Override
@@ -26,13 +29,16 @@ public class ListSettingsActivity extends Activity {
 		//Bundle extras = getIntent().getExtras();
 		//listCount = extras.getInt("listCount");
 		
+		listNameField = (EditText) findViewById(R.id.listNameEditText);
+		tripDurationField = (EditText) findViewById(R.id.numberField);
+		
 		saveButton = (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new OnClickListener() {
         	@Override
         	public void onClick(View v) {
         		listCount++;
         		Intent intent = new Intent(v.getContext(), MyListsActivity.class);
-        		intent.putExtra("listCount", (int)listCount);
+        		intent.putExtra("name", listNameField.getText().toString());
         		startActivity(intent);
         	}
         });

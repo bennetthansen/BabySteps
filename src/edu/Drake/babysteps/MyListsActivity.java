@@ -1,5 +1,9 @@
 package edu.Drake.babysteps;
 
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,8 +24,8 @@ public class MyListsActivity extends Activity {
 	Button newListButton;
 	//ListView lv = null;
 	private ListView listView1;
-	public static boolean noLists = true;
 	TextView tutorialText;
+	public static ArrayList<PackingList> packing_list_data = new ArrayList<PackingList>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,30 +34,36 @@ public class MyListsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_lists);
 		
+		Bundle extras = getIntent().getExtras();
+		if (extras != null) {
+			String name = extras.getString("name");
+			String date = new SimpleDateFormat("MM/dd/yy").format(new Date());
+			packing_list_data.add(new PackingList(name, date, "0 of 0"));
+		}
+		
 		tutorialText = (TextView) findViewById(R.id.tutorialTextView);
 
 		newListButton = (Button) findViewById(R.id.newListButton);
 		newListButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				noLists = false;
 				Intent intent = new Intent(v.getContext(), ListSettingsActivity.class);
 				startActivity(intent);
 			}
 		});
 
-		PackingList packing_list_data[] = new PackingList[]
+		/*PackingList packing_list_data[] = new PackingList[]
 				{
 				new PackingList("Park", "03/04/13", "4 of 12 items"),
 				new PackingList("Miami Vacation", "03/08/13", "7 of 21 items"),
 				new PackingList("In-Laws", "03/14/13", "1 of 11 items"),
 				new PackingList("Hiking Trip", "03/17/13", "1 of 1 items"),
 				new PackingList("Day Care", "04/01/13", "3 of 9 items")
-				};
+				};*/
 
 		PackingListAdapter adapter = new PackingListAdapter(this, R.layout.list_item, packing_list_data);
 
-		if (!noLists) {
+		if (!packing_list_data.isEmpty()) {
 			tutorialText.setVisibility(TextView.INVISIBLE);
 			listView1 = (ListView)findViewById(R.id.listView1);
 			listView1.setAdapter(adapter);

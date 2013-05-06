@@ -1,5 +1,7 @@
 package edu.Drake.babysteps;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,9 +14,9 @@ public class PackingListAdapter extends ArrayAdapter<PackingList>{
 
     Context context; 
     int layoutResourceId;    
-    PackingList data[] = null;
+    ArrayList<PackingList> data = null;
     
-    public PackingListAdapter(Context context, int layoutResourceId, PackingList[] data) {
+    public PackingListAdapter(Context context, int layoutResourceId, ArrayList<PackingList> data) {
         super(context, layoutResourceId, data);
         this.layoutResourceId = layoutResourceId;
         this.context = context;
@@ -43,7 +45,7 @@ public class PackingListAdapter extends ArrayAdapter<PackingList>{
             holder = (PackingListHolder)row.getTag();
         }
         
-        PackingList packingList = data[position];
+        PackingList packingList = data.get(position);
         holder.listName.setText(packingList.title);
         holder.listDate.setText(packingList.date);
         holder.listProgress.setText(packingList.progress);
