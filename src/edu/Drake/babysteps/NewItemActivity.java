@@ -46,8 +46,8 @@ public class NewItemActivity extends Activity {
 			}
 		});
 
- 		TextView number = (TextView) findViewById(R.id.itemNumber);
- 		number.setOnLongClickListener(new View.OnLongClickListener() {
+		TextView number = (TextView) findViewById(R.id.itemNumber);
+		number.setOnLongClickListener(new View.OnLongClickListener() {
 
 			@Override
 			public boolean onLongClick(View v) {
@@ -55,7 +55,7 @@ public class NewItemActivity extends Activity {
 				return true;
 			}
 		});
-		
+
 		Button showPopUpButton = (Button) findViewById(R.id.showPopUpButton);
 		showPopUpButton.setOnLongClickListener(new OnLongClickListener() {
 
@@ -68,43 +68,43 @@ public class NewItemActivity extends Activity {
 		});
 	}
 
-	
+
 	private void showlistPopUp() {
 		AlertDialog.Builder listPopUp = new AlertDialog.Builder(this);
 		final CharSequence[] optionsList = {"Edit", "Email", "Delete"};
-		
+
 		listPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
-			
+
 			@Override
-	        public void onClick(DialogInterface dialog, int which) {
-	         // The 'which' argument contains the index position
-	         // of the selected item
-				
+			public void onClick(DialogInterface dialog, int which) {
+				// The 'which' argument contains the index position
+				// of the selected item
+
 				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
-	           }
-	    });
-	           
-	       	AlertDialog listDialog = listPopUp.create();
-			listDialog.show();
-		
+			}
+		});
+
+		AlertDialog listDialog = listPopUp.create();
+		listDialog.show();
+
 	}
-	
-	
+
+
 	private void holdItemDownPopUp() {
 
 		AlertDialog.Builder holdPopUp = new AlertDialog.Builder(this);
 		final CharSequence[] optionsList = {"Edit", "Delete"};
-		
+
 		holdPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
-			
+
 			@Override
-	        public void onClick(DialogInterface dialog, int which) {
-	         // The 'which' argument contains the index position
-	         // of the selected item
-				
+			public void onClick(DialogInterface dialog, int which) {
+				// The 'which' argument contains the index position
+				// of the selected item
+
 				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
-	           }
-	    });
+			}
+		});
 
 		// Remember, create doesn't show the dialog
 		AlertDialog helpDialog = holdPopUp.create();

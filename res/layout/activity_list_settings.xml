@@ -127,7 +127,6 @@
         android:layout_below="@+id/secondDivider"
         android:layout_marginTop="5dp"
         android:ems="10"
-        android:hint="1"
         android:inputType="number" >
 
         <requestFocus />

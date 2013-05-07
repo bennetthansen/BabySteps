@@ -81,8 +81,6 @@ public class ChecklistActivity extends Activity {
 		});
 		checklist.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-				//Toast toast = Toast.makeText(getApplicationContext(), Integer.toString(position), Toast.LENGTH_SHORT);
-				//toast.show();
 				if (position == 0) {
 					Intent intent = new Intent(getApplicationContext(), NewItemActivity.class);
 					startActivity(intent); 
