@@ -49,7 +49,7 @@ public class ChecklistActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-		
+
 		optionsButton = (Button) findViewById(R.id.optionsButton);
 		optionsButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -74,11 +74,11 @@ public class ChecklistActivity extends Activity {
 
 		checklist.setOnItemLongClickListener(new OnItemLongClickListener() {
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-				
-				holdItemDownPopUp();
-				
-				Toast toast = Toast.makeText(getApplicationContext(), "Long press received", Toast.LENGTH_SHORT);
-				toast.show();
+
+				if (position != 0) {
+					holdItemDownPopUp();
+				}
+
 				return true;
 			}
 		});
@@ -111,7 +111,7 @@ public class ChecklistActivity extends Activity {
 				case 1:
 					deletePopup();
 					break;
-				
+
 				}
 				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
 			}
@@ -122,9 +122,9 @@ public class ChecklistActivity extends Activity {
 		helpDialog.show();
 
 	}
-	
+
 	private void deletePopup() {
-		
+
 		AlertDialog.Builder deletePopUp = new AlertDialog.Builder(this);
 		//create a textview for centered title
 		TextView titleMsg = new TextView(this);
@@ -133,7 +133,7 @@ public class ChecklistActivity extends Activity {
 		titleMsg.setTextSize(20);
 		titleMsg.setTextColor(Color.parseColor("#15a7e1"));
 		deletePopUp.setCustomTitle(titleMsg);
-		
+
 		deletePopUp.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
 
 			public void onClick(DialogInterface dialog, int which) {
@@ -151,9 +151,9 @@ public class ChecklistActivity extends Activity {
 		// Remember, create doesn't show the dialog
 		AlertDialog createDialog = deletePopUp.create();
 		createDialog.show();
-		
+
 	}
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

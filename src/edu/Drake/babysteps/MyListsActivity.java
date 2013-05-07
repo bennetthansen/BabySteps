@@ -37,14 +37,14 @@ public class MyListsActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_lists);
-		
+
 		Bundle extras = getIntent().getExtras();
 		if (extras != null) {
 			String name = extras.getString("name");
 			String date = new SimpleDateFormat("MM/dd/yy").format(new Date());
 			packing_list_data.add(new PackingList(name, date, "0 of 0"));
 		}
-		
+
 		tutorialText = (TextView) findViewById(R.id.tutorialTextView);
 
 		newListButton = (Button) findViewById(R.id.newListButton);
@@ -79,9 +79,7 @@ public class MyListsActivity extends Activity {
 
 					//Displays dialog when held down
 					showlistPopUp();
-					
-					Toast toast = Toast.makeText(getApplicationContext(), "Long press received", Toast.LENGTH_SHORT);
-					toast.show();
+
 					return true;
 				}
 			});
@@ -107,7 +105,7 @@ public class MyListsActivity extends Activity {
 		});*/
 	}
 
-	
+
 	private void showlistPopUp() {
 		AlertDialog.Builder listPopUp = new AlertDialog.Builder(this);
 		final CharSequence[] optionsList = {"Edit", "Email", "Delete"};
@@ -118,8 +116,7 @@ public class MyListsActivity extends Activity {
 			public void onClick(DialogInterface dialog, int which) {
 				// The 'which' argument contains the index position
 				// of the selected item
-				switch (which)
-				{
+				switch (which) {
 				case 0:
 					break;
 				case 1:
@@ -128,9 +125,8 @@ public class MyListsActivity extends Activity {
 				case 2:
 					deletePopup();
 					break;
-				
 				}
-				
+
 				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
 			}
 		});
@@ -139,9 +135,9 @@ public class MyListsActivity extends Activity {
 		listDialog.show();
 
 	}
-	
+
 	private void deletePopup() {
-		
+
 		AlertDialog.Builder deletePopUp = new AlertDialog.Builder(this);
 		//create a textview for centered title
 		TextView titleMsg = new TextView(this);
@@ -150,7 +146,7 @@ public class MyListsActivity extends Activity {
 		titleMsg.setTextSize(20);
 		titleMsg.setTextColor(Color.parseColor("#15a7e1"));
 		deletePopUp.setCustomTitle(titleMsg);
-		
+
 		deletePopUp.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
 
 			public void onClick(DialogInterface dialog, int which) {
@@ -168,14 +164,14 @@ public class MyListsActivity extends Activity {
 		// Remember, create doesn't show the dialog
 		AlertDialog createDialog = deletePopUp.create();
 		createDialog.show();
-		
+
 	}
-	
-	
+
+
 	private void emailPopUp() {
 
 		AlertDialog.Builder holdPopUp = new AlertDialog.Builder(this);
-		final CharSequence[] optionsList = {"yahoo", "gmail"};
+		final CharSequence[] optionsList = {"Yahoo!", "Gmail"};
 
 		holdPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
 
