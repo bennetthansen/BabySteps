@@ -13,7 +13,6 @@ import android.view.View.OnLongClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 
@@ -166,8 +165,13 @@ public class NewItemActivity extends Activity {
 	private void emailPopUp() {
 
 		AlertDialog.Builder holdPopUp = new AlertDialog.Builder(this);
-		final CharSequence[] optionsList = {"yahoo", "gmail"};
-
+		final CharSequence[] optionsList = {"Yahoo!", "Gmail"};
+		/*
+		final Item[] optionsList = {
+				new Item("yahoo", android.R.drawable.ic_menu_add), 
+				new Item("gmail", android.R.drawable.ic_menu_delete)
+				};
+		*/
 		holdPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
 
 			@Override
@@ -175,7 +179,7 @@ public class NewItemActivity extends Activity {
 				// The 'which' argument contains the index position
 				// of the selected item
 
-				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
+				
 			}
 		});
 
