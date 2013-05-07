@@ -9,19 +9,28 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DBAdapter {
-	public static final String KEY_ROWID = "id";
+	public static final String KEY_LISTID = "listid";
+	public static final String KEY_ITEMID = "itemid";
 	public static final String KEY_LISTNAME = "listname";
-	public static final String KEY_ITEMS = "items";
+	public static final String KEY_ITEMNAME = "itemname";
+	public static final String KEY_WEATHER = "weather";
+	public static final String KEY_TEMPERATURE = "temperature";
+	public static final String KEY_QUANTITY = "quantity";
 	public static final String KEY_CHILDREN = "children";
 	private static final String TAG = "DBAdapter";
 
-	private static final String DATABASE_NAME = "BabystepsDB";
-	private static final String DATABASE_TABLE = "lists";
-	private static final int DATABASE_VERSION = 2;
+	private static final String DATABASE_NAME = "BabyStepsDB";
+	private static final String DATABASE_LISTTABLE = "lists";
+	private static final String DATABASE_ITEMTABLE = "items";
+	private static final int DATABASE_VERSION = 1;
 
-	private static final String DATABASE_CREATE = "create table if not exists lists "
-			+ "(id integer primary key autoincrement, "
-			+ "listname VARCHAR not null, items VARCHAR, children VARCHAR);";
+	private static final String LISTTABLE_CREATE = "create table if not exists lists "
+			+ "(listid integer primary key autoincrement, "
+			+ "listname VARCHAR not null, weather VARCHAR, temperature VARCHAR, children VARCHAR);";
+	
+	private static final String ITEMTABLE_CREATE = "create table if not exists items " 
+			+ "(itemid integer primary key autoincrement, "
+			+ "itemname VARCHAR not null, listname VARCHAR notnull, quantity INTEGER);";
 
 	private final Context context;
 
@@ -41,7 +50,8 @@ public class DBAdapter {
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			try {
-				db.execSQL(DATABASE_CREATE);
+				db.execSQL(LISTTABLE_CREATE);
+				db.execSQL(ITEMTABLE_CREATE);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -68,30 +78,39 @@ public class DBAdapter {
 	}
 
 	// insert a record into the database
-	public long insertRecord(String listname, String items, String children) {
+	public long makeList(String listname, String weather,
+				String temperature, String children) {
 		ContentValues initialValues = new ContentValues();
 		initialValues.put(KEY_LISTNAME, listname);
-		initialValues.put(KEY_ITEMS, items);
+		initialValues.put(KEY_WEATHER, weather);
+		initialValues.put(KEY_TEMPERATURE, temperature);
 		initialValues.put(KEY_CHILDREN, children);
-		return db.insert(DATABASE_TABLE, null, initialValues);
+		return db.insert(DATABASE_LISTTABLE, null, initialValues);
 	}
 
-	// deletes a particular record
-	public boolean deleteContact(long rowId) {
-		return db.delete(DATABASE_TABLE, KEY_ROWID + "=" + rowId, null) > 0;
+	// deletes a list
+	public boolean deletelist(long listId) {
+		return db.delete(DATABASE_LISTTABLE, KEY_LISTID + "=" + listId, null) > 0;
+	}
+	
+	// deletes items on a list
+	public boolean deleteitem(long itemId) {
+		return db.delete(DATABASE_ITEMTABLE, KEY_ITEMID + "=" + itemId, null) > 0;
 	}
 
 	// retrieves all the records
 	public Cursor getAllRecords() {
-		return db.query(DATABASE_TABLE, new String[] { KEY_ROWID, KEY_LISTNAME,
-				KEY_ITEMS, KEY_CHILDREN }, null, null, null, null, null);
+		return db.query(DATABASE_LISTTABLE, new String[] { KEY_LISTID, KEY_LISTNAME,
+				KEY_WEATHER, KEY_TEMPERATURE, KEY_CHILDREN }, null,
+				null, null, null, null);
 	}
 
 	// retrieves a particular record
-	public Cursor getRecord(long rowId) throws SQLException {
-		Cursor mCursor = db.query(true, DATABASE_TABLE, new String[] {
-				KEY_ROWID, KEY_LISTNAME, KEY_ITEMS, KEY_CHILDREN }, KEY_ROWID
-				+ "=" + rowId, null, null, null, null, null);
+	public Cursor getRecord(long listId) throws SQLException {
+		Cursor mCursor = db.query(true, DATABASE_LISTTABLE, new String[] {
+				KEY_LISTID, KEY_LISTNAME, KEY_WEATHER, KEY_TEMPERATURE,
+				KEY_CHILDREN }, KEY_LISTID + "=" + listId, null, null,
+				null, null, null);
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 		}
@@ -99,12 +118,13 @@ public class DBAdapter {
 	}
 
 	// updates a record
-	public boolean updateRecord(long rowId, String listname, String items,
-			String children) {
+	public boolean updateRecord(long rowId, String listname, String weather,
+			String temperature, String items, String children) {
 		ContentValues args = new ContentValues();
 		args.put(KEY_LISTNAME, listname);
-		args.put(KEY_ITEMS, items);
+		args.put(KEY_WEATHER, weather);
+		args.put(KEY_TEMPERATURE, temperature);
 		args.put(KEY_CHILDREN, children);
-		return db.update(DATABASE_TABLE, args, KEY_ROWID + "=" + rowId, null) > 0;
+		return db.update(DATABASE_LISTTABLE, args, KEY_LISTID + "=" + rowId, null) > 0;
 	}
 }
