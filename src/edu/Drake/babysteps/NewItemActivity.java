@@ -116,7 +116,6 @@ public class NewItemActivity extends Activity {
 				switch (which)
 				{
 				case 0:
-					emailPopUp();
 					break;
 				case 1:
 					deletePopup();
@@ -163,6 +162,7 @@ public class NewItemActivity extends Activity {
 		createDialog.show();
 		
 	}
+	
 	private void emailPopUp() {
 
 		AlertDialog.Builder holdPopUp = new AlertDialog.Builder(this);

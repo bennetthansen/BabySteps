@@ -5,8 +5,12 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -73,6 +77,9 @@ public class MyListsActivity extends Activity {
 				CharSequence text = "Hello toast!";
 				int duration = Toast.LENGTH_SHORT;*/
 
+					//Displays dialog when held down
+					showlistPopUp();
+					
 					Toast toast = Toast.makeText(getApplicationContext(), "Long press received", Toast.LENGTH_SHORT);
 					toast.show();
 					return true;
@@ -100,6 +107,92 @@ public class MyListsActivity extends Activity {
 		});*/
 	}
 
+	
+	private void showlistPopUp() {
+		AlertDialog.Builder listPopUp = new AlertDialog.Builder(this);
+		final CharSequence[] optionsList = {"Edit", "Email", "Delete"};
+
+		listPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// The 'which' argument contains the index position
+				// of the selected item
+				switch (which)
+				{
+				case 0:
+					break;
+				case 1:
+					emailPopUp();
+					break;
+				case 2:
+					deletePopup();
+					break;
+				
+				}
+				
+				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
+			}
+		});
+
+		AlertDialog listDialog = listPopUp.create();
+		listDialog.show();
+
+	}
+	
+	private void deletePopup() {
+		
+		AlertDialog.Builder deletePopUp = new AlertDialog.Builder(this);
+		//create a textview for centered title
+		TextView titleMsg = new TextView(this);
+		titleMsg.setText("Are you sure you want to delete this list?");
+		titleMsg.setGravity(Gravity.CENTER_HORIZONTAL);
+		titleMsg.setTextSize(20);
+		titleMsg.setTextColor(Color.parseColor("#15a7e1"));
+		deletePopUp.setCustomTitle(titleMsg);
+		
+		deletePopUp.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+
+			public void onClick(DialogInterface dialog, int which) {
+				// Do nothing but close the dialog. Will become the delete button
+			}
+		});
+
+		deletePopUp.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+			public void onClick(DialogInterface dialog, int which) {
+				//Nothing but close. Will be the cancel button
+			}
+		});
+
+		// Remember, create doesn't show the dialog
+		AlertDialog createDialog = deletePopUp.create();
+		createDialog.show();
+		
+	}
+	
+	
+	private void emailPopUp() {
+
+		AlertDialog.Builder holdPopUp = new AlertDialog.Builder(this);
+		final CharSequence[] optionsList = {"yahoo", "gmail"};
+
+		holdPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// The 'which' argument contains the index position
+				// of the selected item
+
+				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
+			}
+		});
+
+		// Remember, create doesn't show the dialog
+		AlertDialog helpDialog = holdPopUp.create();
+		helpDialog.show();
+
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
