@@ -127,7 +127,6 @@ public class MyListsActivity extends Activity {
 					break;
 				}
 
-				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
 			}
 		});
 
@@ -180,7 +179,7 @@ public class MyListsActivity extends Activity {
 				// The 'which' argument contains the index position
 				// of the selected item
 
-				//Toast.makeText(getApplicationContext(), "U clicked "+optionsList[which], Toast.LENGTH_LONG).show();
+				Toast.makeText(getApplicationContext(), "Email successfully sent", Toast.LENGTH_LONG).show();
 			}
 		});
 
