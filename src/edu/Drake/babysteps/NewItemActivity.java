@@ -110,6 +110,7 @@ public class NewItemActivity extends Activity {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
+				
 				// The 'which' argument contains the index position
 				// of the selected item
 				switch (which)
@@ -136,10 +137,11 @@ public class NewItemActivity extends Activity {
 		AlertDialog.Builder deletePopUp = new AlertDialog.Builder(this);
 		//create a textview for centered title
 		TextView titleMsg = new TextView(this);
-		titleMsg.setText("Are you sure you want to delete this list?");
+		titleMsg.setText("Are you sure\n you want to delete\n this list?");
 		titleMsg.setGravity(Gravity.CENTER_HORIZONTAL);
 		titleMsg.setTextSize(20);
 		titleMsg.setTextColor(Color.parseColor("#15a7e1"));
+		titleMsg.setBackgroundColor(Color.WHITE);
 		deletePopUp.setCustomTitle(titleMsg);
 		
 		deletePopUp.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
