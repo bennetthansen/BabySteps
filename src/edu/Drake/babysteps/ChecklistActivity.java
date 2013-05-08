@@ -54,8 +54,9 @@ public class ChecklistActivity extends Activity {
 		optionsButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Toast toast = Toast.makeText(getApplicationContext(), "Opitons button clicked", Toast.LENGTH_SHORT);
-				toast.show();
+				
+				showlistPopUp();
+				
 			}
 		});
 
@@ -93,6 +94,35 @@ public class ChecklistActivity extends Activity {
 
 	}
 
+	private void showlistPopUp() {
+		AlertDialog.Builder listPopUp = new AlertDialog.Builder(this);
+		final CharSequence[] optionsList = {"Edit", "Email", "Delete"};
+
+		listPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// The 'which' argument contains the index position
+				// of the selected item
+				switch (which) {
+				case 0:
+					break;
+				case 1:
+					emailPopUp();
+					break;
+				case 2:
+					deletePopup();
+					break;
+				}
+
+			}
+		});
+
+		AlertDialog listDialog = listPopUp.create();
+		listDialog.show();
+
+	}
+	
 	private void holdItemDownPopUp() {
 
 		AlertDialog.Builder holdPopUp = new AlertDialog.Builder(this);
@@ -120,7 +150,28 @@ public class ChecklistActivity extends Activity {
 		// Remember, create doesn't show the dialog
 		AlertDialog helpDialog = holdPopUp.create();
 		helpDialog.show();
+	}
+	
+	private void emailPopUp() {
 
+		AlertDialog.Builder holdPopUp = new AlertDialog.Builder(this);
+		final CharSequence[] optionsList = {"Yahoo!", "Gmail"};
+
+		holdPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				// The 'which' argument contains the index position
+				// of the selected item
+
+				Toast.makeText(getApplicationContext(), "Email successfully sent", Toast.LENGTH_LONG).show();
+			}
+		});
+
+		// Remember, create doesn't show the dialog
+		AlertDialog helpDialog = holdPopUp.create();
+		helpDialog.show();
+		
 	}
 
 	private void deletePopup() {
@@ -151,7 +202,7 @@ public class ChecklistActivity extends Activity {
 		// Remember, create doesn't show the dialog
 		AlertDialog createDialog = deletePopUp.create();
 		createDialog.show();
-
+		
 	}
 
 	@Override
