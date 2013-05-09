@@ -31,6 +31,7 @@
         android:layout_alignParentTop="true"
         android:background="@android:color/transparent" />
 
+    <!--  
     <Button
         android:id="@+id/showPopUpButton"
         android:layout_width="wrap_content"
@@ -39,6 +40,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="19dp"
         android:text="Pop Up Demo" />
+    -->
     
     <EditText
         android:id="@+id/itemNumber"

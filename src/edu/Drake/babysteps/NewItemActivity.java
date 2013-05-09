@@ -44,7 +44,8 @@ public class NewItemActivity extends Activity {
 				finish();
 			}
 		});
-
+	}
+/*
 		TextView number = (TextView) findViewById(R.id.itemNumber);
 		number.setOnLongClickListener(new View.OnLongClickListener() {
 
@@ -64,9 +65,8 @@ public class NewItemActivity extends Activity {
 				showlistPopUp();
 				return true;
 			}
-		});
+		}); 
 	}
-
 
 	private void showlistPopUp() {
 		AlertDialog.Builder listPopUp = new AlertDialog.Builder(this);
@@ -173,7 +173,7 @@ public class NewItemActivity extends Activity {
 				new Item("yahoo", android.R.drawable.ic_menu_add), 
 				new Item("gmail", android.R.drawable.ic_menu_delete)
 				};
-		*/
+		
 		holdPopUp.setItems(optionsList, new DialogInterface.OnClickListener() {
 
 			@Override
@@ -190,6 +190,8 @@ public class NewItemActivity extends Activity {
 		helpDialog.show();
 
 	}
+	
+	*/
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
